@@ -1,0 +1,6 @@
+1;Aldo;Prohenza Hernandez;Mendivil 48, Madrid;aprohenza@gmail.com;674 929 018
+2;Odalys;Hernandez Lopez;Mendivil 48, Madrid;odalys@gmail.com;674 929 018
+3;Hermes;Fundora Hernandez;Valparaiso Chile;fundora@gmail.com;666 666 666
+4;Julian;Marti Perez;La Habana, Cuba;jjmarti@gmail.com;555 555 555
+5;Maria Luisa;Bermudez;Camino Cruces 23, Madrid;maria@gmail.com;999 999 999
+6;Cuca;la loca;su casa;asdsadasd;2323 3232 323

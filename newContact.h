@@ -42,27 +42,27 @@ void newContact(){
 
 		printf("Nombre:     ");
 		fflush(stdout);
-		gets(nombre);
+		scanf("%s", nombre);
 		fflush(stdin);	
 
 		printf("Apellidos:   ");
 		fflush(stdout);
-		gets(apellido);
+		scanf("%s", apellido);
 		fflush(stdin);
 		
 		printf("Direccion:  ");
 		fflush(stdout);
-		gets(direccion);
+		scanf("%s", direccion);
 		fflush(stdin);
 		
 		printf("Email:      ");
 		fflush(stdout);
-		gets(email);
+		scanf("%s", email);
 		fflush(stdin);
 		
 		printf("Telefono:   ");
 		fflush(stdout);
-		gets(telefono);
+		scanf("%s", telefono);
 		fflush(stdin);
 	
 	
@@ -113,31 +113,25 @@ void newContact(){
 int setId(){
 	FILE *f;
 
-	int id = 0;
+	int id = 1;
 	
 	
 	f = fopen("agenda.txt", "r");
+
 	
-	if(f==NULL){
-		printf("No hay Base de Datos creada\n");
-		//printf("Estableciendo id = 1\n");
-		//crearBBDD();
-		id = 1;
-
-
-	}else{		
-
-		fscanf(f, "%i;%30[^;];%30[^;];%30[^;];%30[^;];%30[^\n]", &id, nombre, apellido, direccion, email, telefono);
 		
-		while(!feof(f)){
-			//printf("%i\n",  id);
-			fscanf(f, "%i;%30[^;];%30[^;];%30[^;];%30[^;];%30[^\n]", &id, nombre, apellido, direccion, email, telefono);
+
+	fscanf(f, "%i;%30[^;];%30[^;];%30[^;];%30[^;];%30[^\n]", &id, nombre, apellido, direccion, email, telefono);
+	printf("%s\n", nombre);
+	while(!feof(f)){
 			
-		}
-
-		id++;
-		
+		fscanf(f, "%i;%30[^;];%30[^;];%30[^;];%30[^;];%30[^\n]", &id, nombre, apellido, direccion, email, telefono);
+			
 	}
+
+	id++;
+		
+	
 
 	
 	//printf("lineas %i\n", id);
@@ -146,17 +140,3 @@ int setId(){
 }
 
 
-void crearBBDD(){
-	FILE *f;
-
-	f = fopen("agenda.txt", "a");
-
-	if (f == NULL){
-		printf("No se ha podido crear la Base de Datos\n");
-	}else{
-		printf("Base de Datos creada con exito\n");
-		fprintf(f, "Id;Nombre;Apellidos;Direccion;Email;Telefono\n" );
-	}
-
-	fclose(f);
-}
